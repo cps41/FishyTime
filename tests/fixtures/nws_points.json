@@ -1,0 +1,10 @@
+{
+    "properties": {
+        "gridId": "BOU",
+        "gridX": 57,
+        "gridY": 40,
+        "forecast": "https://api.weather.gov/gridpoints/BOU/57,40/forecast",
+        "forecastHourly": "https://api.weather.gov/gridpoints/BOU/57,40/forecast/hourly",
+        "observationStations": "https://api.weather.gov/gridpoints/BOU/57,40/stations"
+    }
+}

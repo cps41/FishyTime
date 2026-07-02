@@ -1,0 +1,25 @@
+[project]
+name = "fishytime"
+version = "0.1.0"
+description = "Aggregates free public data sources to recommend when/where to fish the Colorado Front Range"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32",
+    "astral>=3.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "responses>=0.25",
+]
+
+[project.scripts]
+fishytime = "fishytime.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

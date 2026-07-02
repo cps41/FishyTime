@@ -1,0 +1,28 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "monitoring_location_id": "USGS-06719505",
+                "parameter_code": "00060",
+                "time": "2026-07-02T02:45:00+00:00",
+                "value": "130",
+                "unit_of_measure": "ft^3/s"
+            },
+            "geometry": {"type": "Point", "coordinates": [-105.234722, 39.753056]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "monitoring_location_id": "USGS-06719505",
+                "parameter_code": "00065",
+                "time": "2026-07-02T02:45:00+00:00",
+                "value": "4.10",
+                "unit_of_measure": "ft"
+            },
+            "geometry": {"type": "Point", "coordinates": [-105.234722, 39.753056]}
+        }
+    ],
+    "numberReturned": 2
+}

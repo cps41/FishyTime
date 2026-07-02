@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(curl -s 'https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items?bbox=-105.45,39.95,-105.2,40.05&f=json&limit=100' -o /c/Users/carly/AppData/Local/Temp/claude/c--Users-carly-FishyTime/881655e3-555d-455d-8620-dd7361b5cb2d/scratchpad/bouldercreek.json)",
+      "Read(//c/Users/carly/AppData/Local/Temp/claude/c--Users-carly-FishyTime/881655e3-555d-455d-8620-dd7361b5cb2d/scratchpad/**)"
+    ]
+  }
+}
