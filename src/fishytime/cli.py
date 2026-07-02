@@ -1,5 +1,5 @@
 import argparse
-from datetime import date
+from datetime import date, datetime, timezone
 
 from fishytime.pipeline import run_pipeline
 
@@ -23,8 +23,8 @@ def main() -> None:
     parser.add_argument(
         "--date",
         type=date.fromisoformat,
-        default=date.today(),
-        help="Target date in YYYY-MM-DD format (default: today).",
+        default=datetime.now(timezone.utc).date(),
+        help="Target date in YYYY-MM-DD format (default: today, UTC).",
     )
     args = parser.parse_args()
 

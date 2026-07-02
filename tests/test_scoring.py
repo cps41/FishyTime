@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from fishytime.config import WATERS
 from fishytime.models import MoonInfo, StreamflowReading, WeatherReading
@@ -9,10 +9,11 @@ CHATFIELD = next(w for w in WATERS if w.name == "Chatfield Reservoir")
 
 
 def _neutral_moon() -> MoonInfo:
+    # MoonInfo always stores UTC; scoring.py converts to local for display.
     return MoonInfo(
         moon_illumination_pct=50.0,
-        sunrise=datetime(2026, 7, 2, 5, 45),
-        sunset=datetime(2026, 7, 2, 20, 30),
+        sunrise=datetime(2026, 7, 2, 11, 45, tzinfo=timezone.utc),
+        sunset=datetime(2026, 7, 3, 2, 30, tzinfo=timezone.utc),
         is_dawn_dusk_window=True,
     )
 

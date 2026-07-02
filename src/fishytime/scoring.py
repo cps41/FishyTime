@@ -1,5 +1,6 @@
 from fishytime.config import WaterBody
 from fishytime.models import FactorScore, MoonInfo, ScoreResult, StreamflowReading, WeatherReading
+from fishytime.timezones import LOCAL_TZ
 
 
 def _triangular_goodness(x: float, low: float, peak: float, high: float) -> float:
@@ -126,13 +127,15 @@ def _stocking_factor(stocking: bool | None) -> FactorScore:
 
 def _moon_factor(moon: MoonInfo) -> FactorScore:
     distance_from_quarter = abs(moon.moon_illumination_pct - 50) / 50
+    local_sunrise = moon.sunrise.astimezone(LOCAL_TZ)
+    local_sunset = moon.sunset.astimezone(LOCAL_TZ)
     return FactorScore(
         name="Moon phase",
         value=distance_from_quarter,
         weight=0.5,
         reason=(
             f"moon illumination {moon.moon_illumination_pct:.0f}%, "
-            f"best window {moon.sunrise:%H:%M}-{moon.sunset:%H:%M} (dawn/dusk)"
+            f"best window {local_sunrise:%H:%M}-{local_sunset:%H:%M} (dawn/dusk)"
         ),
     )
 
